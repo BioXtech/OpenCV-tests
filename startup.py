@@ -20,9 +20,25 @@ args = vars(argParse.parse_args())
 #opencv part
 face_cascade = cv2.CascadeClassifier('models/haarcascade_frontalface_default.xml')
 eye_cascade = cv2.CascadeClassifier('models/haarcascade_eye.xml')
-
 imgColor = cv2.imread(args["image"],cv2.IMREAD_UNCHANGED)
 imgGray = cv2.imread(args["image"],cv2.IMREAD_GRAYSCALE)
+print(imgColor.shape)
+
+scale_percent = 60 # percent of original size
+width = int(imgColor.shape[1] * scale_percent / 100)
+height = int(imgColor.shape[0] * scale_percent / 100)
+dim = (width, height)
+# resize image
+imgColor = cv2.resize(imgColor, dim, interpolation = cv2.INTER_AREA)
+
+scale_percent = 60 # percent of original size
+width = int(imgGray.shape[1] * scale_percent / 100)
+height = int(imgGray.shape[0] * scale_percent / 100)
+dim = (width, height)
+# resize image
+imgGray = cv2.resize(imgGray, dim, interpolation = cv2.INTER_AREA)  
+
+print(imgColor.shape)
 #cv2.imshow('imgColor',imgColor)
 #cv2.waitKey(0)
 #cv2.imshow('imgGray',imgGray)
