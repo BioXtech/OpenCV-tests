@@ -109,14 +109,14 @@ def move_screen(direction,time):
 
 #Main
 while True!= 0: #TODO: change the statement
-    #take_pic()
+    take_pic()
     faces,eyes = process_pic()
-    print("faces array")
-    print(faces)
-    print("------------")
+#    print("faces array")
+#    print(faces)
+#    print("------------")
+#    sleep(5)
+#    print("eyes array")
+#    print(eyes)
+#    print("------------")
     sleep(5)
-    print("eyes array")
-    print(eyes)
-    print("------------")
-    sleep(5)
-    #move_screen(caluclate_time(faces,eyes))
+    move_screen(caluclate_time(faces,eyes))
