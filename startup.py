@@ -78,10 +78,10 @@ def calculate_time(faceArray,eyesArray):
                 direction = -1
     
     time = midFront*taillePixel/motorSpeed
-    print("Time")
-    print(time)
-    print("Dir")
-    print(direction)
+#    print("Time")
+#    print(time)
+#    print("Dir")
+#    print(direction)
     
     
     return direction,time
@@ -110,13 +110,13 @@ def move_screen(direction,time):
 while isScreenCorrectlyPlaced != True:
     take_pic()
     faces,eyes = process_pic()
-    print("faces array")
-    print(faces)
-    print("------------")
-    sleep(1)
-    print("eyes array")
-    print(eyes)
-    print("------------")
-    sleep(1)
+#    print("faces array")
+#    print(faces)
+#    print("------------")
+#    sleep(1)
+#    print("eyes array")
+#    print(eyes)
+#    print("------------")
+#    sleep(1)
     direction,time = calculate_time(faces,eyes)
     move_screen(direction,time)
